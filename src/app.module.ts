@@ -12,7 +12,8 @@ import { Report } from './reports/reports.entity';
     type: 'sqlite',
     database: 'db.sqlite',
     entities: [__dirname + '/**/*.entity{.ts,.js}'],
-    synchronize: true,
+    synchronize: true,//if we change structure of the db (add col) we run a migration, 
+    // used for development only, in production we use migrations
   })],
   controllers: [AppController],
   providers: [AppService],
