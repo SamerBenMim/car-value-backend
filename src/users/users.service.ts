@@ -18,27 +18,27 @@ export class UsersService {
     };
 
     findOne(id: number) {
-        return this.usersRepository.findOneBy({id});
+        return this.usersRepository.findOneBy({ id });
     };
     find(email: string) {
         return this.usersRepository.findBy({ email });
-        
+
     };
 
     async update(id: number, attrs: Partial<User>) {
-        const user = await this.usersRepository.findOneBy({id});
-        if(!user){
+        const user = await this.usersRepository.findOneBy({ id });
+        if (!user) {
             throw new Error('user not found');
         }
-        Object.assign(user,attrs);
+        Object.assign(user, attrs);
         return this.usersRepository.save(user);
 
     }
-
-
+    async remove(id: number) {
+        const user = await this.usersRepository.findOneBy({ id });
+        if (!user) {
+            throw new Error('user not found');
+        }
+        return this.usersRepository.remove(user);
+    }
 }
-
-
-
-
-
