@@ -1,12 +1,14 @@
 import {Entity, PrimaryGeneratedColumn, Column,AfterInsert, AfterUpdate} from "typeorm";
+// import{Exclude} from 'class-transformer';
 
 @Entity() 
 export class User {
     @PrimaryGeneratedColumn()
     id: number;
+    // @Column()
+    // username: string;
     @Column()
-    username: string;
-    @Column()
+    //@Exclude() there is a better way to do this
     password: string;
     @Column()
     email: string;
