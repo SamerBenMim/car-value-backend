@@ -60,4 +60,9 @@ export class UsersController {
     updateUser(@Param('id') id: string, @Body() body: Partial<UpdateUserDto>) {
         return this.UsersService.update(parseInt(id), body);
     }
+
+    @Post('/signout')
+    signout(@Session() session: any) {
+        session.userId = null;
+    }
 }
