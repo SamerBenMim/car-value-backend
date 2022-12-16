@@ -6,6 +6,8 @@ import { SerialzeInterceptor } from 'src/interceptors/serialize.interceptor';
 import { UserDto } from './dtos/user.dto';
 import { Serialize } from 'src/interceptors/serialize.interceptor';
 import { AuthService } from './auth.service';
+import { CurrentUser } from './decorators/current-user.decorator';
+
 @Controller('auth')
 @Serialize(UserDto)//this will serialize the all response
 export class UsersController {
@@ -15,9 +17,13 @@ export class UsersController {
         private authService: AuthService
     ) { }
 
+    // @Get('/whoami')
+    // whoAmI(@Session() session: any) {
+    //     return this.UsersService.findOne(session.userId);
+    // }
     @Get('/whoami')
-    whoAmI(@Session() session: any) {
-        return this.UsersService.findOne(session.userId);
+    whoAmI(@CurrentUser() user: string) {
+        return user; 
     }
 
     @Post('/signup')
