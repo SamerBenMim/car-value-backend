@@ -8,12 +8,12 @@ import { APP_INTERCEPTOR } from '@nestjs/core';
 import { CurrentUserInterceptor } from './interceptors/current-user.interceptor';
 @Module({
   imports: [TypeOrmModule.forFeature([User])],//create repository
-  controllers: [UsersController],
-  providers: [UsersService,
+  controllers: [UsersController], 
+  providers: [UsersService, 
     AuthService,
     {
       provide: APP_INTERCEPTOR, //this will make the interceptor global
-      useClass :CurrentUserInterceptor 
+      useClass : CurrentUserInterceptor 
     }]
 })
 export class UsersModule {}

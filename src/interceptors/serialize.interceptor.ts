@@ -31,8 +31,5 @@ export class SerialzeInterceptor implements NestInterceptor {
             })
         );
     }
-    // private toSerialize(metatype: Function): boolean{
-    //     const types: Function[] = [String, Boolean, Number, Array, Object];
-    //     return !types.includes(metatype);
-    // }
+
 }
