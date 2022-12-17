@@ -705,7 +705,7 @@
     "webpack" "5.74.0"
     "webpack-node-externals" "3.0.0"
 
-"@nestjs/common@^8.0.0 || ^9.0.0", "@nestjs/common@^9.0.0":
+"@nestjs/common@^7.0.0 || ^8.0.0 || ^9.0.0", "@nestjs/common@^8.0.0 || ^9.0.0", "@nestjs/common@^9.0.0":
   "integrity" "sha512-nZuo3oDsSSlC5mti/M2aCWTEIfHPGDXmBwWgPeCpRbrNz3IWd109rkajll+yxgidVjznAdBS9y00JkAVJblNYw=="
   "resolved" "https://registry.npmjs.org/@nestjs/common/-/common-9.2.1.tgz"
   "version" "9.2.1"
@@ -713,6 +713,16 @@
     "iterare" "1.2.1"
     "tslib" "2.4.1"
     "uuid" "9.0.0"
+
+"@nestjs/config@^2.2.0":
+  "integrity" "sha512-78Eg6oMbCy3D/YvqeiGBTOWei1Jwi3f2pSIZcZ1QxY67kYsJzTRTkwRT8Iv30DbK0sGKc1mcloDLD5UXgZAZtg=="
+  "resolved" "https://registry.npmjs.org/@nestjs/config/-/config-2.2.0.tgz"
+  "version" "2.2.0"
+  dependencies:
+    "dotenv" "16.0.1"
+    "dotenv-expand" "8.0.3"
+    "lodash" "4.17.21"
+    "uuid" "8.3.2"
 
 "@nestjs/core@^8.0.0 || ^9.0.0", "@nestjs/core@^9.0.0":
   "integrity" "sha512-a9GkXuu8uXgNgCVW+17iI8kLCltO+HwHpU2IhR+32JKnN2WEQ1YEWU4t3GJ2MNq44YkjIw9zrKvFkjJBlYrNbQ=="
@@ -2067,7 +2077,14 @@
   "resolved" "https://registry.npmjs.org/create-require/-/create-require-1.1.1.tgz"
   "version" "1.1.1"
 
-"cross-spawn@^7.0.0", "cross-spawn@^7.0.2", "cross-spawn@^7.0.3":
+"cross-env@^7.0.3":
+  "integrity" "sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw=="
+  "resolved" "https://registry.npmjs.org/cross-env/-/cross-env-7.0.3.tgz"
+  "version" "7.0.3"
+  dependencies:
+    "cross-spawn" "^7.0.1"
+
+"cross-spawn@^7.0.0", "cross-spawn@^7.0.1", "cross-spawn@^7.0.2", "cross-spawn@^7.0.3":
   "integrity" "sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w=="
   "resolved" "https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.3.tgz"
   "version" "7.0.3"
@@ -2191,10 +2208,20 @@
   dependencies:
     "esutils" "^2.0.2"
 
+"dotenv-expand@8.0.3":
+  "integrity" "sha512-SErOMvge0ZUyWd5B0NXMQlDkN+8r+HhVUsxgOO7IoPDOdDRD2JjExpN6y3KnFR66jsJMwSn1pqIivhU5rcJiNg=="
+  "resolved" "https://registry.npmjs.org/dotenv-expand/-/dotenv-expand-8.0.3.tgz"
+  "version" "8.0.3"
+
 "dotenv@^16.0.0":
   "integrity" "sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ=="
   "resolved" "https://registry.npmjs.org/dotenv/-/dotenv-16.0.3.tgz"
   "version" "16.0.3"
+
+"dotenv@16.0.1":
+  "integrity" "sha512-1K6hR6wtk2FviQ4kEiSjFiH5rpzEVi8WW0x96aztHVMhEspNpc4DVOUTEHtEva5VThQ8IaBX1Pe4gSzpVVUsKQ=="
+  "resolved" "https://registry.npmjs.org/dotenv/-/dotenv-16.0.1.tgz"
+  "version" "16.0.1"
 
 "ee-first@1.1.1":
   "integrity" "sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow=="
@@ -3694,7 +3721,7 @@
   "resolved" "https://registry.npmjs.org/lodash.merge/-/lodash.merge-4.6.2.tgz"
   "version" "4.6.2"
 
-"lodash@^4.17.19", "lodash@^4.17.21":
+"lodash@^4.17.19", "lodash@^4.17.21", "lodash@4.17.21":
   "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
   "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   "version" "4.17.21"
@@ -4543,19 +4570,19 @@
   dependencies:
     "queue-microtask" "^1.2.2"
 
+"rxjs@^6.0.0 || ^7.2.0", "rxjs@^7.1.0", "rxjs@^7.2.0", "rxjs@^7.5.5":
+  "integrity" "sha512-DDa7d8TFNUalGC9VqXvQ1euWNN7sc63TrUCuM9J998+ViviahMIjKSOU7rfcgFOF+FCD71BhDRv4hrFz+ImDLQ=="
+  "resolved" "https://registry.npmjs.org/rxjs/-/rxjs-7.6.0.tgz"
+  "version" "7.6.0"
+  dependencies:
+    "tslib" "^2.1.0"
+
 "rxjs@^6.6.0":
   "integrity" "sha512-hTdwr+7yYNIT5n4AMYp85KA6yw2Va0FLa3Rguvbpa4W3I5xynaBZo41cM3XM+4Q6fRMj3sBYIR1VAmZMXYJvRQ=="
   "resolved" "https://registry.npmjs.org/rxjs/-/rxjs-6.6.7.tgz"
   "version" "6.6.7"
   dependencies:
     "tslib" "^1.9.0"
-
-"rxjs@^7.1.0", "rxjs@^7.2.0", "rxjs@^7.5.5":
-  "integrity" "sha512-DDa7d8TFNUalGC9VqXvQ1euWNN7sc63TrUCuM9J998+ViviahMIjKSOU7rfcgFOF+FCD71BhDRv4hrFz+ImDLQ=="
-  "resolved" "https://registry.npmjs.org/rxjs/-/rxjs-7.6.0.tgz"
-  "version" "7.6.0"
-  dependencies:
-    "tslib" "^2.1.0"
 
 "rxjs@6.6.7":
   "integrity" "sha512-hTdwr+7yYNIT5n4AMYp85KA6yw2Va0FLa3Rguvbpa4W3I5xynaBZo41cM3XM+4Q6fRMj3sBYIR1VAmZMXYJvRQ=="
